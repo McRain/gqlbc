@@ -1,11 +1,11 @@
 # gqlbc
 GraphQL Client library for browsers 
 
-Usage
+## Usage
 
-Query:
+###### Query:
 
-const res = await GraphQLClient.Get({
+`const res = await GraphQLClient.Get({
         orders: [
             {
                 _args: {
@@ -21,12 +21,12 @@ const res = await GraphQLClient.Get({
     if (!res || res.error) {
         console.log("error");
         return;
-    }
+    }`
     
     
-Mutation
+###### Mutation
 
-const res = await GraphQLClient.Set({
+`const res = await GraphQLClient.Set({
         saveUser: [
             {
                 _args: {
@@ -36,4 +36,4 @@ const res = await GraphQLClient.Set({
             }
         ]
     });
-    console.log(res);
+    console.log(res);`
