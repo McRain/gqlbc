@@ -31,6 +31,8 @@ class GraphQLClient {
         let result = ``;
         if (!obj)
             return result;
+        if (typeof (obj) === "string" || typeof (obj) === "number")
+            return JSON.stringify(obj);
         Object.keys(obj).forEach((k) => {
             result += k + " ";
             const vals = obj[k];
@@ -55,8 +57,19 @@ class GraphQLClient {
                             const v = vals[0];
                             if (typeof (v) === "string")
                                 result += JSON.stringify(vals) + ",";
-                            else
+                            else if (typeof (v) === "number")
                                 result += "[" + vals.join(',') + "],";
+                            else {
+                                result += "[";
+                                vals.forEach((el) => {
+                                    result += "{";
+                                    Object.keys(el).forEach((kl) => {
+                                        result += kl + ":" + GraphQLClient.BuildObject(el[kl])+",";
+                                    });
+                                    result = result.slice(0, -1) + "},";
+                                });
+                                result = result.slice(0, -1) + "],";
+                            }
                         }
                     }
                 });
