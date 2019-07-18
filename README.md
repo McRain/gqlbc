@@ -18,6 +18,7 @@ GraphQL Client library for browsers
             }
         ]
     });
+    
     if (!res || res.error) {
         console.log("error");
         return;
