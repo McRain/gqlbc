@@ -1,6 +1,8 @@
 # gqlbc
 GraphQL Client library for browsers 
 
+https://www.npmjs.com/package/graphql-sender
+
 ## Usage
 
 ###### Query:
