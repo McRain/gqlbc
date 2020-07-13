@@ -1,7 +1,7 @@
 # gqlbc
-GraphQL Client library for browsers 
+##NO SUPPORT - PLEASE USE https://www.npmjs.com/package/@reneos/gqlc
 
-https://www.npmjs.com/package/graphql-sender
+GraphQL Client library for browsers 
 
 ## Usage
 
