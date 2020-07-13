@@ -5,38 +5,38 @@ https://www.npmjs.com/package/graphql-sender
 
 ## Usage
 
+`import gqlapi from "gqlapi"
+gqlapi.Init({
+	url: https://webserver/grapqlapi`,
+	method: "post",
+	credentials: "include",
+	log: false
+})`
+
 ###### Query:
 
-`const res = await GraphQLClient.Get({
-        orders: [
-            {
-                _args: {
-                    id: "order_id"
-                }
-            },
-            "_id", "count", "price", "info", "state", "created",
-            {
-                category: ['_id', 'name']
-            }
-        ]
-    });
-    
-    if (!res || res.error) {
-        console.log("error");
-        return;
-    }`
+`const {user,error} = await gqlapi.Get(
+						{
+							user: [
+								"_id"
+								{ rates: ["value", "previos"] }
+							]
+						},
+						null,
+						"user"
+					)`
     
     
 ###### Mutation
 
-`const res = await GraphQLClient.Set({
-        saveUser: [
-            {
-                _args: {
-                    id: "user_id",
-                    level: 10
-                }
-            }
-        ]
-    });
-    console.log(res);`
+`const {entrypoint,error} = await gqlapi.Set({
+				entrypoint: [
+					{
+						$args: {
+							type: valuetype
+						}
+					},
+					"result",
+					"code"
+				]
+			})`
